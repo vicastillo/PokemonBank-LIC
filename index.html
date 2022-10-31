@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="estilos.css">
+
+    <title>Pokemon bank - Cuenta</title>
+
+</head>
+<body>
+    <header>
+
+        <a href="AQUI VA EL LINK" class="logo">
+            <img src="Pokemon-bank-logoindex.png" alt="logo de la compañia">
+            <h2 class="nombre-empresa">Pokemon Bank</h2>
+        </a>
+
+        <nav>
+            <a href="" class="nav-link">Inicio</a>
+            <a href="login.html" class="nav-link">Cerrar sesión</a>
+            <a href="" class="nav-link">Acerca de</a>
+        </nav>
+
+    </header>
+    
+    <h1 class="Bienvenida">¡Bienvenido!</h1>
+
+    <section class="gtno flex">
+        <div class="btn"><button onclick="abono()">Abonar a cuenta<p><i class="iconodeabono"></i></p></button></div>
+        <div class="btn"><button onclick="retiro()">Retirar de cuenta<p><i class="iconoderetiro"></i></p></button></div>
+    </section>
+
+    <script>
+        var cue;
+        cue = 0;
+        function cuenta(cue){
+            cue = localStorage.getItem("dinero")
+            alert("Usted cuenta con una cantidad de: $" + cue);
+        }
+
+        function abono(){
+            var abono;
+            abono = parseInt(prompt("Ingrese el monto que desea abonar:"));
+            if (abono >=0){
+                cue = cue + abono;
+                alert("Usted ha abonado: $" + abono + "\nSu nuevo monto es de: $" + cue);
+                localStorage.setItem("dinero", cue);
+            }
+            else{
+                alert("ERROR La cantidad que usted ha digitado no está disponible.");
+            }
+        }
+
+        function retiro(){
+            var retiro, dinero, retiro_final, resta;
+
+            retiro = parseInt(prompt("Digite la cantidad que desea realizar"));
+            cue = localStorage.getItem("dinero");
+
+            if(retiro > 0 && retiro < cue){
+                retiro_final = cue - retiro;
+                alert("Su retiro es de: $" + retiro + "\nSu cantidad actual es de: $" + retiro_final);
+                cue = cue - retiro;
+                localStorage.setItem("dinero", cue)
+
+                if(retiro >= 100){
+                    resta=Math.floor(retiro / 100);
+                    alert("Hay " + resta + " billetes de 100 dolares.");
+                    retiro = retiro % 100;
+                }
+                if(retiro >=50){
+                    resta  = Math.floor(retiro/50);
+                    alert("Hay " + resta + " billetes de 50 dolares.");
+                    retiro = retiro % 50;
+                }
+                if(retiro >=20){
+                    resta  = Math.floor(retiro/20);
+                    alert("Hay " + resta + " billetes de 20 dolares.");
+                    retiro = retiro % 20;
+                }
+                if(retiro >=10){
+                    resta  = Math.floor(retiro/10);
+                    alert("Hay " + resta + " billetes de 10 dolares.");
+                    retiro = retiro % 10;
+                }
+                if(retiro >=5){
+                    resta  = Math.floor(retiro/5);
+                    alert("Hay " + resta + " billetes de 5 dolares.");
+                    retiro = retiro % 5;
+                }
+                if(retiro >=1){
+                    resta  = Math.floor(retiro/1);
+                    alert("Hay " + resta + " billetes de 1 dolares.");
+                    retiro = retiro % 1;
+                }
+                else{
+                    alert("ERROR La cantidad que usted ha digitado no se encuentra disponible");
+                }
+            } 
+            localStorage.setItem("dinero", cue); 
+
+            }
+
+    </script>
+
+
+</body>
+</html>

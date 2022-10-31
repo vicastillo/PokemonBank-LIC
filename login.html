@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="estilosdellogin.css">
+
+    <title>Pokemon bank - Login</title>
+
+
+
+</head>
+<body>
+    <header>
+        <a href="AQUI VA EL LINK" class="logo">
+            <img src="Pokemon-bank-logoindex.png" alt="logo de la compañia">
+            <h2 class="nombre-empresa">Pokemon Bank</h2>
+        </a>
+
+        <nav>
+            <a href="" class="nav-link">Inicio</a>
+            <a href="" class="nav-link">Acerca de</a>
+        </nav>
+    </header>
+
+    <div class="formulario">
+        <h1>Inicio de sesión</h1>
+        <form method="post">
+
+           <div class="username">
+            <input type="text" id="usu" required>
+            <label>Nombre de usuario</label>
+           </div>
+
+           <div class="username">
+            <input type="password" id="contra" required>
+            <label>Contraseña</label>
+           </div>
+
+           <div class="recordar" onClick="credenciales()">¿Olvidó su usuario o contraseña?
+            <script>
+                function credenciales(){
+                    window.alert("El usuario es: Ash Ketchum \nContraseña es: 1234");
+                } 
+                </script></div>
+
+           <input type="submit" value="Iniciar" onclick="ingresodedatos()">
+           
+
+           <script>
+            function ingresodedatos(){
+                var user, pass;
+                user=document.getElementById("usu").value;
+                pass=document.getElementById("contra").value;
+
+                if(user=="Ash Ketchum" && pass=="1234"){
+                    //window.alert("Correcto");
+                    //onclick="location.href='index.html'"
+                    window.location.href="index.html";
+                
+                }
+                else{
+                    window.alert("Datos ingresados no son válidos");
+                }
+                }
+           </script>
+
+           <!-- Comentario botón de prueba: -->
+           <!-- prueba2deboton
+           <div>
+            <button class="btnsubmit" onclick="location.href='index.html'">Ingresar</button>
+            </div>-->
+       
+           
+        </form>
+    </div>
+    
+</body>
+</html>
