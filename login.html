@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!--sweetalert-->
+    <link rel="icon" href="favicon.ico"> <!--icono favicon-->
+    <link rel="stylesheet" href="estilosdellogin.css"> <!--estilo css-->
+
+    <title>Pokemon bank - Login</title>
+
+
+
+</head>
+<body>
+    <header>
+        <!--parra de header-->
+        <a href="login.html" class="logo">
+            <img src="Pokemon-bank-logoindex.png" alt="logo de la compañia">
+            <h2 class="nombre-empresa">Pokemon Bank</h2>
+        </a>
+ <!--Opciones para navegación dentro del sitio-->
+        <nav>
+            <a href="" class="nav-link">Inicio</a>
+        </nav>
+    </header>
+
+     <!--Se genera el div formulario de ingreso de las credenciales de acceso-->
+    <div class="formulario">
+        <h1>Inicio de sesión</h1>
+        <form method="post">
+
+           <div class="username">  <!--Input para que el usuario ingrese su nombre de usuario-->
+            <input type="text" id="usu" required>
+            <label>Nombre de usuario</label>
+           </div>
+
+           <div class="username"> <!--Input para que el usuario ingrese su contraseña-->
+            <input type="password" id="contra" required>
+            <label>Contraseña</label>
+           </div>
+
+           <!--En caso el usuario olvide sus credenciales o no las sepa-->
+           <div class="recordar" onClick="credenciales()">¿Olvidó su usuario o contraseña?
+            <script>
+                function credenciales(){
+                    swal("Credenciales de ingreso:","Usuario: Ash Ketchum \nContraseña: 1234","info");
+                } 
+                </script></div>
+
+           <input type="submit" value="Iniciar" onclick="ingresodedatos()">
+           
+
+           <script>
+            //funcion para validar que los datos ingresados son los correctos
+            function ingresodedatos(){
+                var user, pass;
+                user=document.getElementById("usu").value;
+                pass=document.getElementById("contra").value;
+
+                if(user=="Ash Ketchum" && pass=="1234"){
+                    swal("Correcto");
+                    //onclick="location.href='index.html'"
+                    window.location.href="index.html";
+                
+                }
+                //en caso los datos ingresados sean incorrectos
+                else{
+                    swal({
+                        title: "Los datos ingresados no son correctos",
+                        icon: "error"
+                    });                        
+                }
+                }
+           </script>
+
+           <!-- Comentario botón de prueba: -->
+           <!-- prueba2deboton
+           <div>
+            <button class="btnsubmit" onclick="location.href='index.html'">Ingresar</button>
+            </div>-->
+       
+           
+        </form>
+    </div>
+    
+</body>
+</html>

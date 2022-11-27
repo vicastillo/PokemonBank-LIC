@@ -1,0 +1,169 @@
+/*Estilo general del cuerpo de la página*/
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(150dg, #6C3483, #58D68D);
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/*Estilo de la barra header*/
+header{
+    display: flex;
+    min-height: 70px;
+    background-color: rgb(230, 245, 19);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/*Estilo del logo de la barra header*/
+.logo{
+    display: flex;
+}
+
+.logo img{
+    height: 50px;
+}
+
+nav{
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+nav a:hover{
+    color: white;
+}
+
+@media (max-width:700px){
+    header{
+        flex-direction: column;
+    }
+
+    nav{
+        padding: 10px 0px;
+    }
+}
+
+/*Estilo del formulario de ingreso de las credenciales de acceso*/
+
+.formulario{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+}
+
+.formulario h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.formulario form{
+    padding: 0 40 px;
+    box-sizing: border-box;
+}
+
+form .username{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.username input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.username label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.username span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #6C3483;
+    transition: .5s;
+}
+
+.username input:focus ~ label,
+.username input:focus ~ label{
+    top: -5px;
+    color: #6C3483;
+}
+
+.username input:focus ~ span::before,
+.username input:focus ~ span::before{
+    width: 100px;
+}
+
+/*Estilo de la opcion para recordar las credenciales de acceso*/
+.recordar{
+    margin: -5px 0 20px 5px;
+    color: blue;
+    cursor: pointer;
+}
+
+.recordar hover{
+    text-decoration: underline;
+}
+
+/*Estilo de los input*/
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1pz solid;
+    background: yellowgreen;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover{
+    border-color: yellowgreen;
+    transition: .5s;
+}
+
+/*Estilo del boton de iniciar*/
+.btnsubmit{
+    width: 100%;
+    height: 50px;
+    border: 1pz solid;
+    background: yellowgreen;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    }
+
+    .btnsubmit:hover{
+        border-color: yellowgreen;
+        transition: .5s;
+    }
